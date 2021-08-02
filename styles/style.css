@@ -9,6 +9,16 @@ html, body {
 }
 
 .grid-container {
-
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
 }
 
+.grid-element {
+    background-color: #7EC3B0;
+}
+
+.colored {
+    background-color: #E27D60;
+}
