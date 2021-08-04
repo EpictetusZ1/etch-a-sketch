@@ -58,8 +58,9 @@ html, body {
     font-size: 0.8em;
 }
 
-.grid-container {
+#grid-container {
     height: 100%;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
@@ -71,5 +72,5 @@ html, body {
 
 .colored {
     background-color: #E27D60;
-    transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in;
 }
