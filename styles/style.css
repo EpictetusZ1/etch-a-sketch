@@ -51,11 +51,17 @@ html, body {
 }
 
 .selection-container label {
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 #slider-counter {
-    font-size: 0.8em;
+    font-size: 1em;
+    font-weight: bolder;
+    color: #C38D9E;
+}
+
+#size-adjust {
+    -webkit-s
 }
 
 #grid-container {

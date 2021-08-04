@@ -1,5 +1,6 @@
 const gridContainer = document.getElementById("grid-container")
 const adjustSlider = document.getElementById("size-adjust")
+const showSizeVal = document.getElementById("slider-counter")
 const resetBtn = document.getElementById("reset")
 
 let initSize = 16
@@ -19,6 +20,7 @@ function displayGrid(size) {
         gridContainer.appendChild(gridDiv).classList.add("grid-element")
     }
     allGrid = document.querySelectorAll(".grid-element")
+    showSizeVal.textContent = `${size} x ${size}`
 }
 
 displayGrid(size)
