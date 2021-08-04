@@ -1,10 +1,10 @@
 const gridContainer = document.getElementById("grid-container")
+const slideContainer = document.querySelector(".selection-container")
 const adjustSlider = document.getElementById("size-adjust")
 const showSizeVal = document.getElementById("slider-counter")
 const resetBtn = document.getElementById("reset")
 
 let initSize = 16
-
 let allGrid
 let gridDiv
 let size = initSize
@@ -48,6 +48,14 @@ function removeGridElements() {
 
 resetBtn.addEventListener("click", resetColor)
 resetBtn.addEventListener("click", changeBtnColor)
+
+adjustSlider.addEventListener("mousedown", () => (slideContainer.style.backgroundColor = "#9ef6f2"), {
+    capture: true
+})
+adjustSlider.addEventListener("mouseup", () => (slideContainer.style.backgroundColor = "#84CDCA"), {
+    capture: true
+})
+
 
 adjustSlider.addEventListener("change", (e)  => updateGrid(e.target.value))
 adjustSlider.addEventListener("change", resetColor)
