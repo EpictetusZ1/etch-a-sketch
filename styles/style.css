@@ -6,12 +6,13 @@ html, body {
 
 .main {
     height: 100%;
+    width: auto;
     font-family: Verdana, 'sans-serif';
 }
 
 .menu {
     width: 100%;
-    height: 60px;
+    height: 65px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -60,8 +61,20 @@ html, body {
     color: #C38D9E;
 }
 
-#size-adjust {
-    -webkit-s
+.board-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    background-color: #7EC3B0;
+}
+
+.board {
+    margin-bottom: 60px;
+    align-self: center;
+    height: 800px;
+    width: 800px;
+    box-shadow:  0 0 25px #4f4e4e;
 }
 
 #grid-container {
