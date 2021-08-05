@@ -3,6 +3,8 @@ const slideContainer = document.querySelector(".selection-container")
 const adjustSlider = document.getElementById("size-adjust")
 const showSizeVal = document.getElementById("slider-counter")
 const resetBtn = document.getElementById("reset")
+const colorBtn = document.getElementById("color")
+
 
 let initSize = 16
 let allGrid
@@ -10,7 +12,7 @@ let gridDiv
 let size = initSize
 let shape
 let highlight = "#305e8c"
-let random = false
+let random = true
 
 function displayGrid(size) {
     gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`
@@ -37,6 +39,7 @@ function changeColor() {
 
 function removeGridElements() {
     gridContainer.innerHTML = ""
+    gridDiv.innerHTML = ""
 }
 
 function resetColor() {
@@ -55,13 +58,8 @@ function revertColor() {
 resetBtn.addEventListener("click", resetColor)
 resetBtn.addEventListener("click", changeBtnColor)
 
-adjustSlider.addEventListener("mousedown", () => (slideContainer.style.backgroundColor = highlight), {
-    capture: true
-})
-adjustSlider.addEventListener("mouseup", () => (slideContainer.style.backgroundColor = "#30475E"), {
-    capture: true
-})
-
+adjustSlider.addEventListener("mousedown", () => (slideContainer.style.backgroundColor = highlight))
+adjustSlider.addEventListener("mouseup", () => (slideContainer.style.backgroundColor = "#30475E"))
 adjustSlider.addEventListener("change", (e)  => updateGrid(e.target.value))
 adjustSlider.addEventListener("change", resetColor)
 
@@ -78,4 +76,11 @@ function randomColorMode() {
     }
     return color
 }
+
+colorBtn.addEventListener("mousedown", () => {
+    colorBtn.style.backgroundColor = highlight
+    setTimeout(function (){
+        colorBtn.style.backgroundColor = "#30475E"
+    }, 350)
+})
 
