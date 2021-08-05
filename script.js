@@ -3,6 +3,7 @@ const slideContainer = document.querySelector(".selection-container")
 const adjustSlider = document.getElementById("size-adjust")
 const showSizeVal = document.getElementById("slider-counter")
 const resetBtn = document.getElementById("reset")
+const highlight = "#305e8c"
 
 let initSize = 16
 let allGrid
@@ -34,12 +35,12 @@ function resetColor() {
 }
 
 function changeBtnColor() {
-    this.style.backgroundColor = "#9ef6f2"
+    this.style.backgroundColor = highlight
     setTimeout(revertColor,200)
 }
 
 function revertColor() {
-    resetBtn.style.backgroundColor =  "#84CDCA"
+    resetBtn.style.backgroundColor =  "#30475E"
 }
 
 function removeGridElements() {
@@ -49,20 +50,18 @@ function removeGridElements() {
 resetBtn.addEventListener("click", resetColor)
 resetBtn.addEventListener("click", changeBtnColor)
 
-adjustSlider.addEventListener("mousedown", () => (slideContainer.style.backgroundColor = "#9ef6f2"), {
+adjustSlider.addEventListener("mousedown", () => (slideContainer.style.backgroundColor = highlight), {
     capture: true
 })
-adjustSlider.addEventListener("mouseup", () => (slideContainer.style.backgroundColor = "#84CDCA"), {
+adjustSlider.addEventListener("mouseup", () => (slideContainer.style.backgroundColor = "#30475E"), {
     capture: true
 })
-
 
 adjustSlider.addEventListener("change", (e)  => updateGrid(e.target.value))
 adjustSlider.addEventListener("change", resetColor)
 
 function updateGrid(newSize) {
     removeGridElements()
-    console.log(newSize)
     displayGrid(newSize)
 }
 
