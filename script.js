@@ -12,7 +12,7 @@ let gridDiv
 let size = initSize
 let shape
 let highlight = "#305e8c"
-let random = true
+let random = false
 
 function displayGrid(size) {
     gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`
@@ -79,6 +79,10 @@ function randomColorMode() {
 
 colorBtn.addEventListener("mousedown", () => {
     colorBtn.style.backgroundColor = highlight
+    if (random){
+        random = false
+    }
+    random = true
     setTimeout(function (){
         colorBtn.style.backgroundColor = "#30475E"
     }, 350)
