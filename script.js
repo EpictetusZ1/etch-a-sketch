@@ -3,13 +3,14 @@ const slideContainer = document.querySelector(".selection-container")
 const adjustSlider = document.getElementById("size-adjust")
 const showSizeVal = document.getElementById("slider-counter")
 const resetBtn = document.getElementById("reset")
-const highlight = "#305e8c"
 
 let initSize = 16
 let allGrid
 let gridDiv
 let size = initSize
 let shape
+let highlight = "#305e8c"
+let random = false
 
 function displayGrid(size) {
     gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`
@@ -27,7 +28,15 @@ function displayGrid(size) {
 displayGrid(size)
 
 function changeColor() {
-    this.classList.add("colored")
+    if (random) {
+        this.style.backgroundColor = randomColorMode()
+    } else {
+        this.classList.add("colored")
+    }
+}
+
+function removeGridElements() {
+    gridContainer.innerHTML = ""
 }
 
 function resetColor() {
@@ -41,10 +50,6 @@ function changeBtnColor() {
 
 function revertColor() {
     resetBtn.style.backgroundColor =  "#30475E"
-}
-
-function removeGridElements() {
-    gridContainer.innerHTML = ""
 }
 
 resetBtn.addEventListener("click", resetColor)
@@ -63,5 +68,14 @@ adjustSlider.addEventListener("change", resetColor)
 function updateGrid(newSize) {
     removeGridElements()
     displayGrid(newSize)
+}
+
+function randomColorMode() {
+    let color = "#"
+    let components = "ABCDEF0123456789"
+    for (let i = 0; i < 6; i++) {
+        color += components[Math.floor(Math.random() * 16)]
+    }
+    return color
 }
 
