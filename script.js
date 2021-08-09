@@ -79,12 +79,16 @@ function randomColorMode() {
 
 colorBtn.addEventListener("mousedown", () => {
     colorBtn.style.backgroundColor = highlight
+    updateGrid(size)
     if (random){
         random = false
+        return random
     }
     random = true
     setTimeout(function (){
         colorBtn.style.backgroundColor = "#30475E"
     }, 350)
+    return random
 })
+
 
