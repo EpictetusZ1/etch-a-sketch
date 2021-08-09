@@ -93,7 +93,6 @@ html, body {
 }
 
 .board {
-    /*margin-bottom: 80px;*/
     align-self: center;
     height: 700px;
     width: 700px;
